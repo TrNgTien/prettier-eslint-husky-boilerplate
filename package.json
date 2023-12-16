@@ -1,0 +1,24 @@
+{
+  "name": "formatter-boilerplate",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint $(git diff --name-only --diff-filter=d HEAD -- '**/*.js' '**/*.jsx' '**/*.ts' '**/*.tsx' | xargs)",
+    "prepare": "husky install",
+    "lint:fix": "eslint --fix-dry-run $(git diff --name-only --diff-filter=d HEAD -- '**/*.js' '**/*.jsx' '**/*.ts' '**/*.tsx' | xargs)",
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
+    "prettier": "git diff --name-only --diff-filter=d HEAD -- '**/*.js' '**/*.jsx' '**/*.ts' '**/*.tsx' | xargs npx prettier --check",
+    "prettier:fix": "git diff --name-only --diff-filter=d HEAD -- '**/*.js' '**/*.jsx' '**/*.ts' '**/*.tsx' | xargs npx prettier --write",
+    "lint:check": "npm run lint || npm run lint:fix",
+    "eslint": "lb-eslint --report-unused-disable-directives .",
+    "eslint:fix": "npm run eslint -- --fix"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "husky": "^8.0.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "typescript": "^5.3.3"
+  }
+}
