@@ -1,4 +1,4 @@
-# Minimum Boilerplate for Eslint + Prettier + Husky + Typescrypt
+# Minimum Boilerplate for Eslint + Prettier + Husky + Typescript
 
 ## Usage
 
